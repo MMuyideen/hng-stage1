@@ -5,13 +5,6 @@ Here's a comprehensive README file for the deployment:
 
 This README provides step-by-step instructions for deploying a static website on an Azure Linux Virtual Machine using NGINX as the web server.
 
-## Table of Contents
-
-1. [Prerequisites](#prerequisites)
-2. [Azure VM Setup](#azure-vm-setup)
-3. [Server Configuration](#server-configuration)
-4. [Website Deployment](#website-deployment)
-5. [Access Website](#Access website)
 
 ## Prerequisites
 
@@ -34,46 +27,35 @@ This README provides step-by-step instructions for deploying a static website on
 ## Server Configuration
 
 1. SSH into your VM:
-```
-ssh -i <path-to-private-key> azureuser@<your-vm-ip> 
-```
+    ssh -i <path-to-private-key> azureuser@<your-vm-ip> 
 
 2. Update the system:
     sudo apt update && sudo apt upgrade -y
 
 3. Install NGINX:
-   ```
-   sudo apt install nginx -y
-   ```
+    sudo apt install nginx -y
+
 
 4. Start and enable NGINX:
-   ```
-   sudo systemctl start nginx
-   sudo systemctl enable nginx
-   ```
+    sudo systemctl start nginx
+    sudo systemctl enable nginx
 
 ## Website Deployment
 
 1. Upload your website files to the VM:
-   ```
-  git clone https://github.com/MMuyideen/hng-stage1.git
-  cd hng-stage1/web
-   ```
+    git clone https://github.com/MMuyideen/hng-stage1.git
+    cd hng-stage1/web
+
 
 2. Move/copy files to NGINX's serving directory:
-   ```
-   sudo mv * /var/www/html/
-   ```
+    sudo mv * /var/www/html/
 
 5. Test NGINX configuration:
-   ```
-   sudo nginx -t
-   ```
+    sudo nginx -t
+
 
 6. Reload NGINX:
-   ```
-   sudo systemctl reload nginx
-   ```
+    sudo systemctl reload nginx
 
 # Access website
    ```
