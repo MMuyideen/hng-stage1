@@ -11,9 +11,7 @@ This README provides step-by-step instructions for deploying a static website on
 2. [Azure VM Setup](#azure-vm-setup)
 3. [Server Configuration](#server-configuration)
 4. [Website Deployment](#website-deployment)
-5. [Troubleshooting](#troubleshooting)
-6. [Maintenance](#maintenance)
-7. [Security Considerations](#security-considerations)
+5. [Access Website](#Access website)
 
 ## Prerequisites
 
@@ -41,9 +39,7 @@ ssh -i <path-to-private-key> azureuser@<your-vm-ip>
 ```
 
 2. Update the system:
-   ```
-   sudo apt update && sudo apt upgrade -y
-   ```
+    sudo apt update && sudo apt upgrade -y
 
 3. Install NGINX:
    ```
@@ -79,7 +75,7 @@ ssh -i <path-to-private-key> azureuser@<your-vm-ip>
    sudo systemctl reload nginx
    ```
 
-## Access website
+# Access website
    ```
    Access the website using the VM's IP address
    Optionally configure a custom domain by creating A record with your domain provider
