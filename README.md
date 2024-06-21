@@ -1,6 +1,5 @@
 Here's a comprehensive README file for the deployment:
 
-```markdown
 # Static Website Deployment on Azure VM
 
 This README provides step-by-step instructions for deploying a static website on an Azure Linux Virtual Machine using NGINX as the web server.
@@ -58,10 +57,8 @@ This README provides step-by-step instructions for deploying a static website on
     sudo systemctl reload nginx
 
 # Access website
-   ```
-   Access the website using the VM's IP address
-   Optionally configure a custom domain by creating A record with your domain provider
-   ```
+    Access the website using the VM's IP address
+    Optionally configure a custom domain by creating A record with your domain provider
 
 
 This task is my submission for HNG 11 stage 1 task
