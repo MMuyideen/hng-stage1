@@ -1,4 +1,4 @@
-Here's a comprehensive README file for the deployment:
+Here's my submission of my HNG 11 Stage one task
 
 # Static Website Deployment on Azure VM
 
@@ -10,15 +10,13 @@ This README provides step-by-step instructions for deploying a static website on
 2. [Azure VM Setup](#azure-vm-setup)
 3. [Server Configuration](#server-configuration)
 4. [Website Deployment](#website-deployment)
-5. [Troubleshooting](#troubleshooting)
-6. [Maintenance](#maintenance)
-7. [Security Considerations](#security-considerations)
+5. [Access Website](#Access-website)
 
 ## Prerequisites
 
 - An Azure account
 - Basic knowledge of Linux commands
-- SSH client (e.g., PuTTY for Windows or Terminal for macOS/Linux)
+- SSH client (e.g., PuTTY or MobaXtem for Windows or Terminal for macOS/Linux)
 - Your static website files (HTML, CSS, JavaScript)
 
 ## Azure VM Setup
@@ -55,94 +53,33 @@ This README provides step-by-step instructions for deploying a static website on
    sudo systemctl enable nginx
    ```
 
-5. Configure firewall:
-   ```
-   sudo ufw allow 'Nginx HTTP'
-   sudo ufw enable
-   ```
+
 
 ## Website Deployment
 
 1. Upload your website files to the VM:
    ```
-   scp -i <path-to-private-key> -r /path/to/your/website/* azureuser@<your-vm-ip>:/home/azureuser/
+   git clone https://github.com/MMuyideen/hng-stage1.git && cd hng-stage1/web
    ```
 
-2. Move files to NGINX's serving directory:
+2. Move or copy files to NGINX's serving directory:
    ```
-   sudo mv /home/azureuser/* /var/www/html/
-   ```
-
-3. Set proper permissions:
-   ```
-   sudo chown -R www-data:www-data /var/www/html
-   sudo chmod -R 755 /var/www/html
+   sudo mv * /var/www/html/
    ```
 
-4. Configure NGINX (if needed):
-   ```
-   sudo nano /etc/nginx/sites-available/default
-   ```
-   Ensure the `root` directive points to `/var/www/html`.
-
-5. Test NGINX configuration:
+4. Test NGINX configuration:
    ```
    sudo nginx -t
    ```
 
-6. Reload NGINX:
+5. Reload NGINX:
    ```
    sudo systemctl reload nginx
    ```
 
-## Troubleshooting
+## Access website
+You can access your website by navigatig to the VM"s IP address or optionally configure custom doamin
 
-If you can't access your website:
 
-1. Check NGINX status:
-   ```
-   sudo systemctl status nginx
-   ```
 
-2. Verify firewall settings:
-   ```
-   sudo ufw status
-   ```
-
-3. Check NGINX error logs:
-   ```
-   sudo tail -n 50 /var/log/nginx/error.log
-   ```
-
-4. Ensure Azure NSG allows inbound traffic on port 80.
-
-5. Verify file permissions in `/var/www/html`.
-
-## Maintenance
-
-1. Regularly update your system:
-   ```
-   sudo apt update && sudo apt upgrade -y
-   ```
-
-2. Monitor logs:
-   ```
-   sudo tail -f /var/log/nginx/access.log
-   ```
-
-3. Backup your website files periodically.
-
-## Security Considerations
-
-1. Keep your system and NGINX updated.
-2. Use strong SSH keys and disable password authentication.
-3. Consider implementing HTTPS using Let's Encrypt.
-4. Regularly review and update Azure Network Security Group rules.
-5. Implement DDoS protection if needed.
-
----
-
-For any issues or further customization, refer to the official Azure and NGINX documentation.
-```
-
-This README provides a comprehensive guide for deploying and maintaining your static website on an Azure VM. It covers the entire process from setting up the VM to troubleshooting common issues, and includes important security considerations. You can customize this further based on your specific needs or any additional features of your website.
+Thank you for reading.
