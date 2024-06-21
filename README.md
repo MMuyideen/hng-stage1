@@ -78,7 +78,7 @@ This README provides step-by-step instructions for deploying a static website on
    ```
 
 ## Access website
-You can access your website by navigatig to the VM"s IP address or optionally configure custom doamin
+You can access your website by navigating to the VM"s IP address or optionally configure custom doamin
 
 
 
