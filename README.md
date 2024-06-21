@@ -36,7 +36,7 @@ This README provides step-by-step instructions for deploying a static website on
 ## Server Configuration
 
 1. SSH into your VM:
-   - ssh -i <path-to-private-key> azureuser@<your-vm-ip>
+   `ssh -i <path-to-private-key> azureuser@<your-vm-ip>`
 
 2. Update the system:
    ```
