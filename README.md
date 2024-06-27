@@ -81,8 +81,8 @@ This README provides step-by-step instructions for deploying a static website on
 
     location / {
         try_files $uri $uri/ =404;
+        }
     }
-}
    ```   
 
 4. Test NGINX configuration:
