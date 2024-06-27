@@ -24,3 +24,14 @@ colorButton.addEventListener('click', function() {
     const randomColor = Math.floor(Math.random()*16777215).toString(16);
     body.style.backgroundColor = "#" + randomColor;
 });
+
+// Display server information
+fetch('/server-info')
+    .then(response => response.text())
+    .then(server => {
+        document.getElementById('server-software').textContent = server;
+    })
+    .catch(error => {
+        console.error('Error fetching server info:', error);
+        document.getElementById('server-software').textContent = 'Information unavailable';
+    });
