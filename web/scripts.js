@@ -25,17 +25,6 @@ colorButton.addEventListener('click', function() {
     body.style.backgroundColor = "#" + randomColor;
 });
 
-// // Display server information
-// fetch('/server-info')
-//     .then(response => response.text())
-//     .then(server => {
-//         document.getElementById('server-software').textContent = server;
-//     })
-//     .catch(error => {
-//         console.error('Error fetching server info:', error);
-//         document.getElementById('server-software').textContent = 'Information unavailable';
-//     });
-
 // Display server information
 fetch('/')
     .then(response => {

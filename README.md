@@ -66,6 +66,24 @@ This README provides step-by-step instructions for deploying a static website on
    ```
    sudo mv * /var/www/html/
    ```
+3. Edit NGINX configuration:
+   ```
+   server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name _;
+
+    add_header X-Powered-By "NGINX $nginx_version";
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+   ```   
 
 4. Test NGINX configuration:
    ```
