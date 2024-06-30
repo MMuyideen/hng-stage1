@@ -66,7 +66,7 @@ This README provides step-by-step instructions for deploying a static website on
    ```
    sudo mv * /var/www/html/
    ```
-3. Edit NGINX configuration:
+3. Edit NGINX configuration to show server version:
    ```
    server {
     listen 80 default_server;
